@@ -1,25 +1,89 @@
-<!-- Vaughn Zamudio — Lab 3 -->
+<!-- Vaughn Zamudio — Lab 4 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab 3 - Essentials</title>
+  <title>Lab 4 - Advanced HTML</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to My Page</h1>
-  <p>This is a starting paragraph from Lab 2.</p>
 
-  <h2>About This Page</h2>
-  <ul>
-    <li>Learn advanced HTML structural tags</li>
-    <li>Master CSS layout methods</li>
-    <li>Improve my Git/GitHub workflow</li>
-  </ul>
-  
-  <a href="https://github.com">GitHub Developer Resources</a>
-  <br><br>
-  <img src="photo.jpg" alt="A sample project image">
+  <header>
+    <h1>Welcome to My Page</h1>
+    <p>A student project for Web Development I</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+    <p>This is a starting paragraph from Lab 2.</p>
+
+    <h2>About This Page</h2>
+    <ul>
+      <li>Learn advanced HTML structural tags</li>
+      <li>Master CSS layout methods</li>
+      <li>Improve my Git/GitHub workflow</li>
+    </ul>
+    
+    <a href="https://github.com">GitHub Developer Resources</a>
+    <br><br>
+    <img src="photo.jpg" alt="A sample project image">
+
+    <!-- DATA TABLE -->
+    <table>
+      <caption>My Course Schedule</caption>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Topic</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4</td>
+          <td>Advanced HTML</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>CSS Foundations</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Flexbox Layouts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ACCESSIBLE FORM -->
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="msg">Message</label>
+      <textarea id="msg" name="msg"></textarea>
+
+      <label for="referral">How did you find this page?</label>
+      <select id="referral" name="referral">
+        <option value="search">Search engine</option>
+        <option value="social">Social media</option>
+        <option value="friend">A friend</option>
+      </select>
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Vaughn Zamudio</p>
+  </footer>
+
 </body>
 </html>
