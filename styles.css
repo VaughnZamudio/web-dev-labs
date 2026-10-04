@@ -1,4 +1,4 @@
-/* Vaughn Zamudio — Lab 5 */
+/* Vaughn Zamudio — Lab 6 */
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,11 @@ body {
   background-color: #f4f4f9;
 }
 
+/* STICKY HEADER */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   padding: 24px;
   background-color: #0f9488;
   color: white;
@@ -28,7 +32,7 @@ header p {
   margin: 0;
 }
 
-/* FLEXBOX NAVIGATION */
+/* FLEXBOX NAVIGATION WITH HOVER TRANSITION */
 #main-nav {
   display: flex;
   gap: 8px;
@@ -42,6 +46,7 @@ header p {
   text-decoration: none;
   padding: 12px 16px;
   border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
 #main-nav a:hover {
@@ -54,9 +59,29 @@ main {
   padding: 20px;
 }
 
-img {
+/* RELATIVE / ABSOLUTE IMAGE BADGE POSITIONING */
+.image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrap img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #dc2626;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 5;
 }
 
 /* TABLE STYLING */
@@ -125,4 +150,33 @@ footer {
   padding: 20px;
   margin-top: 20px;
   background-color: #e5e7eb;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet Breakpoint (<= 900px) */
+@media (max-width: 900px) {
+  main {
+    padding: 15px;
+  }
+  
+  input, textarea, select {
+    max-width: 100%;
+  }
+}
+
+/* Mobile Breakpoint (<= 600px) */
+@media (max-width: 600px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
 }
