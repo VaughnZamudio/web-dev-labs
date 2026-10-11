@@ -1,10 +1,10 @@
-<!-- Vaughn Zamudio — Lab 6 -->
+<!-- Vaughn Zamudio — Lab 7 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab 6 - Advanced CSS Part 2</title>
+  <title>Lab 7 - Introduction to JavaScript</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,6 +23,13 @@
   <main>
     <p>This is a starting paragraph from Lab 2.</p>
 
+    <!-- LAB 7 INTERACTIVE CONTROLS -->
+    <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px; border: 1px solid #ddd;">
+      <button id="like-btn">Like this page</button>
+      <p id="like-count">0 likes</p>
+      <button id="theme-btn">Toggle dark mode</button>
+    </div>
+
     <h2>About This Page</h2>
     <ul>
       <li>Learn advanced HTML structural tags</li>
@@ -33,13 +40,11 @@
     <a href="https://github.com">GitHub Developer Resources</a>
     <br><br>
 
-    <!-- IMAGE WRAPPER WITH ABSOLUTE POSITIONED BADGE -->
     <div class="image-wrap">
       <img src="photo.jpg" alt="A sample project image">
       <span class="badge">New</span>
     </div>
 
-    <!-- DATA TABLE -->
     <table>
       <caption>My Course Schedule</caption>
       <thead>
@@ -61,10 +66,13 @@
           <td>6</td>
           <td>Flexbox Layouts</td>
         </tr>
+        <tr>
+          <td>7</td>
+          <td>Intro to JavaScript</td>
+        </tr>
       </tbody>
     </table>
 
-    <!-- ACCESSIBLE FORM -->
     <form>
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
@@ -90,5 +98,7 @@
     <p>&copy; 2026 Vaughn Zamudio</p>
   </footer>
 
+  <!-- LINK JAVASCRIPT AT THE END OF BODY -->
+  <script src="script.js"></script>
 </body>
 </html>

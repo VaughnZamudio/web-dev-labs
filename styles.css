@@ -1,4 +1,4 @@
-/* Vaughn Zamudio — Lab 6 */
+/* Vaughn Zamudio — Lab 7 */
 
 * {
   box-sizing: border-box;
@@ -179,4 +179,24 @@ footer {
   table {
     font-size: 0.9rem;
   }
+}
+
+/* LAB 7 — Dark Mode Styles */
+body.dark {
+  background-color: #111827;
+  color: #f1f5f9;
+}
+
+body.dark form {
+  background-color: #1f2937;
+  color: #f1f5f9;
+  border-color: #374151;
+}
+
+body.dark input, 
+body.dark textarea, 
+body.dark select {
+  background-color: #374151;
+  color: #f1f5f9;
+  border-color: #4b5563;
 }
