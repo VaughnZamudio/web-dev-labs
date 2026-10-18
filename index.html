@@ -1,10 +1,10 @@
-<!-- Vaughn Zamudio — Lab 7 -->
+<!-- Vaughn Zamudio — Lab 8 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab 7 - Introduction to JavaScript</title>
+  <title>Lab 8 - Advanced JavaScript</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,19 +23,17 @@
   <main>
     <p>This is a starting paragraph from Lab 2.</p>
 
-    <!-- LAB 7 INTERACTIVE CONTROLS -->
+    <!-- LAB 8 INTERACTIVE CONTROLS -->
     <div style="margin: 20px 0; padding: 15px; background: white; border-radius: 8px; border: 1px solid #ddd;">
       <button id="like-btn">Like this page</button>
       <p id="like-count">0 likes</p>
+      <p id="like-message" style="font-weight: bold; color: #0f9488;"></p>
       <button id="theme-btn">Toggle dark mode</button>
     </div>
 
     <h2>About This Page</h2>
-    <ul>
-      <li>Learn advanced HTML structural tags</li>
-      <li>Master CSS layout methods</li>
-      <li>Improve my Git/GitHub workflow</li>
-    </ul>
+    <!-- GOALS LIST DYNAMICALLY RENDERED VIA JAVASCRIPT -->
+    <ul id="goals-list"></ul>
     
     <a href="https://github.com">GitHub Developer Resources</a>
     <br><br>
@@ -70,6 +68,10 @@
           <td>7</td>
           <td>Intro to JavaScript</td>
         </tr>
+        <tr>
+          <td>8</td>
+          <td>Advanced JavaScript</td>
+        </tr>
       </tbody>
     </table>
 
@@ -98,7 +100,6 @@
     <p>&copy; 2026 Vaughn Zamudio</p>
   </footer>
 
-  <!-- LINK JAVASCRIPT AT THE END OF BODY -->
   <script src="script.js"></script>
 </body>
 </html>
