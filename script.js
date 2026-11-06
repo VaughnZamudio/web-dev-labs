@@ -1,4 +1,9 @@
-// Vaughn Zamudio — Lab 9
+// Vaughn Zamudio — Lab 10
+
+// Apply saved theme immediately on load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
 
 // Part 2 & 3: Promise and Async/Await Greeting
 function getGreetingAfterDelay() {
@@ -46,7 +51,7 @@ if (factBtn) {
   console.warn("fact-btn not found on this page");
 }
 
-// --- Lab 8 Features (Goals List, Like Counter, Theme Toggle) ---
+// --- Lab 8 Features (Goals List, Like Counter, Theme Toggle) & Lab 10 Storage ---
 const goals = ["HTML", "CSS", "JavaScript"];
 const goalsList = document.querySelector("#goals-list");
 
@@ -65,9 +70,10 @@ const likeCount = document.querySelector("#like-count");
 const likeMessage = document.querySelector("#like-message");
 
 const LikeCounter = {
-  likes: 0,
+  likes: Number(localStorage.getItem("likes")) || 0,
   increment() {
     this.likes = this.likes + 1;
+    localStorage.setItem("likes", this.likes);
     this.render();
   },
   render() {
@@ -86,6 +92,8 @@ const LikeCounter = {
   }
 };
 
+LikeCounter.render(); // Show saved count immediately on load
+
 if (likeBtn) {
   likeBtn.addEventListener("click", function() {
     LikeCounter.increment();
@@ -98,7 +106,35 @@ const themeBtn = document.querySelector("#theme-btn");
 if (themeBtn) {
   themeBtn.addEventListener("click", function() {
     document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 } else {
   console.warn("theme-btn not found on this page");
+}
+
+// --- Lab 10 Geolocation API & Feature Detection ---
+const locationBtn = document.querySelector("#location-btn");
+const locationDisplay = document.querySelector("#location-display");
+
+if (locationBtn && locationDisplay) {
+  locationBtn.addEventListener("click", function() {
+    if (!("geolocation" in navigator)) {
+      locationDisplay.textContent = "Geolocation isn't supported.";
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        const lat = position.coords.latitude.toFixed(2);
+        const lon = position.coords.longitude.toFixed(2);
+        locationDisplay.textContent = `You're near ${lat}, ${lon}`;
+      },
+      function(error) {
+        locationDisplay.textContent = "Location access was denied.";
+        console.warn(error);
+      }
+    );
+  });
+} else {
+  console.warn("Location elements not found on this page");
 }
